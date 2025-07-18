@@ -23,7 +23,3 @@ try:
 except:
 	with open("status.md" , "w") as f:
 		f.write("1 pull request merged")
-		f.write("<br>")
-		f.write("Currently:")
-		f.write("<br>")
-		f.write("![pull-shark](images/pull-shark-default.png)")
