@@ -9,7 +9,6 @@ interface MobileFooterItemProps {
   active?: boolean;
   onClick?: () => void;
 }
-
 const MobileFooterItem: React.FC<MobileFooterItemProps> = ({
   icon: Icon,
   href,
