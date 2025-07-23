@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt';
 import prisma from '@/app/libs/prismadb';
 import { NextResponse } from 'next/server';
+import he from 'he';
 
 export async function POST(request: Request) {
   try {
@@ -35,6 +36,7 @@ export async function POST(request: Request) {
     }
 
     // return error
-    return new NextResponse(error.message, { status: 500 });
+    const safeMessage = he.encode(error.message || 'An unexpected error occurred');
+    return new NextResponse(safeMessage, { status: 500 });
   }
 }
