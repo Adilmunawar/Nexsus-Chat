@@ -4,7 +4,6 @@
 generator client {
   provider = "prisma-client-js"
 }
-
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
@@ -19,7 +18,8 @@ model User {
   hashedPassword     String?
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
-
+  intanceAt          DateTime @updateAT
+  fetchRequest       String
   // @relations fields
   conversationIds   String[] @db.ObjectId
   conversations      Conversation[] @relation(fields: [conversationIds], references: [id])
